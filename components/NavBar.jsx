@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-600/50 shadow-lg shadow-gray-900/5 dark:shadow-black/30'>
+   <nav className='relative top-0 z-50 bg-white/0 dark:bg-gray-900/0 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg shadow-gray-900/5 dark:shadow-black/30'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-14 sm:h-16'>
           {/* Logo Section */}
@@ -231,3 +231,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
