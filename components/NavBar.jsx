@@ -3,12 +3,20 @@
 import { SignInButton, SignedIn, SignedOut, UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import ThemeToggle from '@/components/ThemeToggle';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const { isLoaded, isSignedIn, user } = useUser();
+  console.log("user ",user)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const router=useRouter()
 
+// useEffect(()=>{
+//   if(user!=null){
+//   router.push('/user')
+// }
+// },[user])
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -35,8 +43,8 @@ export default function Navbar() {
                 </span>
               </div>
               <span className='text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent'>
-                <span className='hidden sm:inline'>ExpenseTracker AI</span>
-                <span className='sm:hidden'>ExpenseTracker</span>
+                <span className='hidden sm:inline'>Kharch.AI</span>
+                <span className='sm:hidden'>Kharh.AI</span>
               </span>
             </Link>
           </div>
@@ -48,6 +56,13 @@ export default function Navbar() {
               className='relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group'
             >
               <span className='relative z-10'>Home</span>
+              <div className='absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200'></div>
+            </Link>
+            <Link
+              href='/user'
+              className='relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group'
+            >
+              <span className='relative z-10'>Expense</span>
               <div className='absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200'></div>
             </Link>
 
@@ -72,7 +87,7 @@ export default function Navbar() {
             {/* Authentication - Desktop */}
             <div className='hidden sm:block'>
               <SignedOut>
-                <SignInButton>
+                <SignInButton >
                   <button className='relative overflow-hidden bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95'>
                     <div className='relative z-10 flex items-center gap-1 sm:gap-2'>
                       <span>Sign In</span>

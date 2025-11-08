@@ -4,7 +4,7 @@ import LiquidEther from "@/app/components/LiquidEther/LiquidEther";
 import Shuffle from "@/app/components/Shuffle/Shuffle";
 import { SignInButton } from "@clerk/nextjs";
 
-const Guest = () => {
+const Home = () => {
   return (
     <>
       <div style={{ width: "100%", height: "100vh", position: "absolute" }}>
@@ -114,4 +114,4 @@ const Guest = () => {
   );
 };
 
-export default Guest;
+export default Home;
