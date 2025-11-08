@@ -12,11 +12,11 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 const router=useRouter()
 
-// useEffect(()=>{
-//   if(user!=null){
-//   router.push('/user')
-// }
-// },[user])
+useEffect(()=>{
+  if(user!=null){
+  router.push('/user')
+}
+},[user])
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
